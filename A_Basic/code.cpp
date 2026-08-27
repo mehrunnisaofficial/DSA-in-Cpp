@@ -1,4 +1,4 @@
-// Problem 1 : what is variable?
+// Problem 1 : Write your first program
 
 #include<iostream>
 using namespace std;
