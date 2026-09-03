@@ -7,7 +7,9 @@ int main(){
     cout << "Hello World" << endl;
     cout << "Hi it's Mehruu here" << "\n";  
     cout << "Umm I am an AI Engineering student\n";
+    cout << "I like BMW" << " But I also like Java Bobber" << "\n";
     cout << "I don't like sweet";
+    
 
     // see how \n works
 
