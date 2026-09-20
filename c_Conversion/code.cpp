@@ -20,11 +20,11 @@ int main(){
     // EXPLICIT - TYPE CASTING
 
     double marks = 238.99;
-    int new_marks = (int)marks;
+    int new_marks = (int)marks;                        // C style casting
+    int new_marks = static_cast<int>(marks);           // C++ method style casting
     cout << new_marks << endl;
     
     return 0;
 }
-
 
 

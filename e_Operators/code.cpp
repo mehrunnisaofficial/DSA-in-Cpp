@@ -1,4 +1,4 @@
-// Arithemetic Operator
+// ARITHEMATIC OPERATORS
 
 // #include<iostream>
 // using namespace std;
@@ -83,27 +83,60 @@
 
 //--------------------------------------------------------------------------------
 // UNARY OPERATOR
-// ++ increment -> ++ means +1
-//     pre increment and post increment
-// -- decrement -> -- means -1
-//     pre decrement and post decrement
+
+// // ++ increment ->  ++ means +1
+// //     pre increment and post increment
+// // -- decrement -> -- means -1
+// //     pre decrement and post decrement
+
+// #include<iostream>
+// using namespace std;
+
+// int main(){
+//     int a = 10;
+//     int b = a++;   // print 10 internally become 11
+//     int c = ++a;   // internally it was 11 not adding +1 means it will print 12
+
+//     int d = a--;   // print 12 internally become 11
+//     int e = --a;   // internally it was 11 not subtracting -1 means it will print 10
+
+
+//     cout << a << endl;
+//     cout << b << endl;
+//     cout << c << endl;
+//     cout << d << endl;
+//     cout << e << endl;
+//     return 0;
+// }
+
+
+
+//--------------------------------------------------------------------------------
+// TERNARY OPERATOR
+// SYNTAX
+// condition ? expression 1 : expression 2;
 
 #include<iostream>
+#include<string>
 using namespace std;
-
 int main(){
-    int a = 10;
-    int b = a++;   // print 10 internally become 11
-    int c = ++a;   // internally it was 11 not adding +1 means it will print 12
+    int age, num1, num2;
+    cout << "Enter the age of the user: ";
+    cin >> age;
 
-    int d = a--;   // print 12 internally become 11
-    int e = --a;   // internally it was 11 not subtracting -1 means it will print 10
+    string result = (age >= 18) ? "Adult" : "Minor";
+    cout << result << endl;
 
+    // another way to use ternary operator is with cout
+    cout << "Enter the number 1 and number 2: ";
+    cin >> num1 >> num2;
+    (num1 > num2) ? cout << num1 << " is greater" : cout << num2 << " is bigger"; 
 
-    cout << a << endl;
-    cout << b << endl;
-    cout << c << endl;
-    cout << d << endl;
-    cout << e << endl;
+    cout << endl;
+    
+    // more simpler way
+    (2 > 3) ? cout << "True" : cout << "False";
+
     return 0;
+
 }
