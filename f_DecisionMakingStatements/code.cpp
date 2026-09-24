@@ -92,49 +92,6 @@
 
 // -----------------------------------------------------------------------------------
 
-// /*
-// *
-// **
-// ***
-// ****
-// *****
-// */
-
-// #include<iostream>
-// using namespace std;
-
-// int main(){
-//     int n = 10;
-//     char s = '*';
-//     for (int i = 1; i <= n; i++){
-//         for (int j = 1; j <= i; j++){
-//             cout << s;
-//         }
-//         cout << endl;
-//     }
-// }
-
-// /*
-// *****
-// ****
-// ***
-// **
-// *
-// */
-
-// #include<iostream>
-// using namespace std;
-
-// int main(){
-//     int n = 1;
-//     char s = '*';
-//     for (int i = 10; i >= n; i--){
-//         for (int j = 1; j <= i; j++){
-//             cout << s;
-//         }
-//         cout << endl;
-//     }
-// }
 
 //// -----------------------------------------------------------------------------------
 
@@ -193,47 +150,3 @@
 // }
 
 //// -----------------------------------------------------------------------------------
-// // LOOPS
-// // adding all odd number till user want
-
-// #include<iostream>
-// using namespace std;
-// int main(){
-//     int num;
-//     cout << "Enter till user want to add the number: ";
-//     cin >> num;
-
-//     int sum = 0;
-
-//     for(int i = 1; i <= num; i++){
-//         if ((i % 2) != 0){
-//             sum += i;
-//         }
-//     }
-//     cout << "Sum of number from 1 to " << num << " is " << sum;
-
-//     return 0;
-// }
-
-//// -----------------------------------------------------------------------------------
-// adding all even number till user want
-
-// #include<iostream>
-// using namespace std;
-// int main(){
-//     int num;
-//     cout << "Enter till user want to add the number: ";
-//     cin >> num;
-
-//     int sum = 0;
-
-//     for(int i = 1; i <= num; i++){
-//         if ((i % 2) == 0){
-//             sum += i;
-//         }
-//     }
-//     cout << "Sum of number from 1 to " << num << " is " << sum;
-
-//     return 0;
-// }
-
