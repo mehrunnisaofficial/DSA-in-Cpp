@@ -2,6 +2,7 @@
 
 #include<iostream>
 #include<string.h>
+#include <cmath>
 using namespace std;
 
 // function for the sum of two numbers 
@@ -64,12 +65,89 @@ int binomial(int a, int b){                       // Calculate binomial cofficie
     return nmr;
 }
 
+int fobonacchi(int n){
+    int a = 0, b = 1;
+    for(int i = 0; i < n; i++){
+        int next = a + b;
+        a = b;
+        b = next;
+    }
+    return a;
+}
+
+bool isPrime(int n) {
+    if (n < 2) {
+        return false;
+    }
+
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int dtb(int n){
+    int digits = 0;
+    int power = 1;  // 10^0 -> 10^1 -> 10^2 and so on
+
+    while(n > 0){
+        int remainder = n % 2;
+        n = n / 2;
+
+        digits = digits + remainder * power;
+
+        power = power * 10;
+    }
+    return digits;
+}
+//  another way to do the same code is 
+
+int dtb2(int n){
+    int digits = 0;
+    int base = 10;
+    int exponent = 0;
+
+    while(n > 0){
+        int remainder = n % 2;
+        n = n / 2;
+
+        cout << "remainder = " << remainder << endl;
+        cout << "exponent = " << exponent << endl;
+        cout << "pow = " << pow(base, exponent) << endl;
+
+        digits = digits + (remainder * pow(base, exponent));
+
+        cout << "digits = " << digits << endl;
+        cout << "----------------" << endl;
+
+        exponent++;
+    }
+    return digits;
+}
+
+int btd(int n){
+    int ans = 0, pow = 1;
+    while(n > 0){
+        int remainder = n % 10;
+        ans += remainder * pow;
+
+        // Updation
+        n /= 10;
+        pow *= 2;
+    }
+
+    return ans;
+}
+
 int main(){                          // Main Function
     int a, b;
     cout << "Enter Value of 1st Number: ";
     cin >> a;
-    cout << "Enter Value of 2nd Number: ";
-    cin >> b;
+    // cout << "Enter Value of 2nd Number: ";
+    // cin >> b;
 
     // cout << endl;
     // int calc = sum(a, b);              // Function Call and here a and b is aruments 
@@ -91,10 +169,26 @@ int main(){                          // Main Function
     // int digit = digitcalc(a);
     // cout << "The sum of the digits of the " << a << " is: " << digit;
 
-    cout << endl;
-    int binomialcoefficiant = binomial(a, b);
-    cout << "Binomial Coefficient: " << binomialcoefficiant << endl;
+    // cout << endl;
+    // int binomialcoefficiant = binomial(a, b);
+    // cout << "Binomial Coefficient: " << binomialcoefficiant << endl;
 
+    // cout << endl;
+    // int fibon = fobonacchi(a);
+    // cout << "The " << a << "th term in the Fibonachi series is: " << fibon;
+
+    // cout << endl;
+    // for(int i = 2; i <= a; i++){
+    //     if (isPrime(i)) {
+    //         cout << i << " ";
+    //     }
+    // }
+    
+    // cout << endl;
+    // cout << "Conversion From Decimal to Binary:\n" << a << " to " << dtb(a) << endl;
+
+    cout << endl;
+    cout << "Conversion From Binary to decimal:\n" << a << " to " << btd(a) << endl;
     return 0;
 }
 
@@ -115,3 +209,5 @@ int main(){                          // Main Function
 // generally in our program arguments are literals, litrals are those values
 // in a program whose value remain same for the entire program
 // eg 1 = 1 always
+
+
