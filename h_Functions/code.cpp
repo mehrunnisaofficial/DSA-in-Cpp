@@ -105,12 +105,12 @@ int dtb(int n){
 }
 //  another way to do the same code is 
 
-int dtb2(int n){
+int dtb2(int n){          // But if u have old compiler avoid this method
     int digits = 0;
     int base = 10;
     int exponent = 0;
 
-    while(n > 0){
+    while(n > 0){   
         int remainder = n % 2;
         n = n / 2;
 
@@ -128,8 +128,27 @@ int dtb2(int n){
     return digits;
 }
 
+bool check_binary(int n){
+    int binary = n;
+
+    while(binary > 0){
+        int remainder = binary % 10;
+        binary = binary / 10;
+        if(remainder != 1 && remainder != 0){
+            return false;
+        }
+    }
+    return true;
+}
+
 int btd(int n){
     int ans = 0, pow = 1;
+
+    if(!check_binary(n)){
+        cout << "Number is not binary we can't convert it in decimal";
+        return -1;
+    }
+
     while(n > 0){
         int remainder = n % 10;
         ans += remainder * pow;
@@ -142,53 +161,71 @@ int btd(int n){
     return ans;
 }
 
+int revnum(int copynum){
+    int reverse = 0;
+
+    while(copynum > 0){
+        int remainder = copynum % 10;        // getting last digit
+        reverse = reverse * 10 + remainder;
+        copynum = copynum / 10;              // removing last digit
+    }
+    return reverse;
+}
+
+
+
 int main(){                          // Main Function
     int a, b;
     cout << "Enter Value of 1st Number: ";
     cin >> a;
-    // cout << "Enter Value of 2nd Number: ";
-    // cin >> b;
-
-    // cout << endl;
-    // int calc = sum(a, b);              // Function Call and here a and b is aruments 
-    // cout << "Sum of " << a << " and " << b << " is: " << calc;
-
-    // cout << endl; 
-    // string equality = maxofTwo(a, b);
-    // cout << equality;
-
-    // cout << endl; 
-    // int sumtillN = sumN(a);
-    // cout << "The sum from 0 to " << a << " is: " << sumtillN;
-
-    // cout << endl;
-    // int facttillN = factN(a);
-    // cout << "The factorial of " << a << " is: " << facttillN;
-
-    // cout << endl;
-    // int digit = digitcalc(a);
-    // cout << "The sum of the digits of the " << a << " is: " << digit;
-
-    // cout << endl;
-    // int binomialcoefficiant = binomial(a, b);
-    // cout << "Binomial Coefficient: " << binomialcoefficiant << endl;
-
-    // cout << endl;
-    // int fibon = fobonacchi(a);
-    // cout << "The " << a << "th term in the Fibonachi series is: " << fibon;
-
-    // cout << endl;
-    // for(int i = 2; i <= a; i++){
-    //     if (isPrime(i)) {
-    //         cout << i << " ";
-    //     }
-    // }
-    
-    // cout << endl;
-    // cout << "Conversion From Decimal to Binary:\n" << a << " to " << dtb(a) << endl;
+    cout << "Enter Value of 2nd Number: ";
+    cin >> b;
 
     cout << endl;
+    int calc = sum(a, b);              // Function Call and here a and b is aruments 
+    cout << "Sum of " << a << " and " << b << " is: " << calc;
+
+    cout << endl; 
+    string equality = maxofTwo(a, b);
+    cout << equality;
+
+    cout << endl; 
+    int sumtillN = sumN(a);
+    cout << "The sum from 0 to " << a << " is: " << sumtillN;
+
+    cout << endl;
+    int facttillN = factN(a);
+    cout << "The factorial of " << a << " is: " << facttillN;
+
+    cout << endl;
+    int digit = digitcalc(a);
+    cout << "The sum of the digits of the " << a << " is: " << digit;
+
+    cout << endl;
+    int binomialcoefficiant = binomial(a, b);
+    cout << "Binomial Coefficient: " << binomialcoefficiant << endl;
+
+    cout << endl;
+    int fibon = fobonacchi(a);
+    cout << "The " << a << "th term in the Fibonachi series is: " << fibon;
+
+    cout << endl;
+    for(int i = 2; i <= a; i++){
+        if (isPrime(i)) {
+            cout << i << " ";
+        }
+    }
+    
+    cout << endl;
+    cout << "Conversion From Decimal to Binary:\n" << b << " to " << dtb(b) << endl;
+
+    cout << endl;
+    int btdd = btd(a);
+    if (btdd == -1){
+        return 0;
+    }
     cout << "Conversion From Binary to decimal:\n" << a << " to " << btd(a) << endl;
+
     return 0;
 }
 
@@ -210,4 +247,4 @@ int main(){                          // Main Function
 // in a program whose value remain same for the entire program
 // eg 1 = 1 always
 
-
+// g++ code.cpp -o code && code.exe
